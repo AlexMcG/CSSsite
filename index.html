@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="icon" href="favicon.png" type="image/png">
+        <link rel="icon" type="image/png" href="favicon.png" profile="file:///home/alex/Desktop/git/CSSsite/index.html">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
 	    .splash { 
@@ -27,6 +27,12 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script type="text/javascript">
+	  function dismiss() {
+	    var div = document.getElementById("splash");
+	    div.parentNode.removeChild(div);
+	  }
+	</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -43,13 +49,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Computer Science Society</a>
+                    <a class="brand" href="index.html">Computer Science Society</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">News</a></li>
-                            <li><a href="#contact">Events</a></li>
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Events ...</a></li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header" style="text-align: center">Meetings</li>
+                                    <li style="text-align: center">TBA</li>
+                                </ul>
+                            </li>                            
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -57,9 +70,6 @@
                                     <li><a href="#">Google +</a></li>
 				    <li><a href="#">Twitter</a></li>
                                     <li><a href="#">E-mail</a></li>
-                                    <li class="divider"></li>
-                                    <li class="nav-header" style="text-align: center">Meetings</li>
-                                    <li style="text-align: center">TBA</li>
                                 </ul>
                             </li>
                         </ul>
@@ -76,40 +86,21 @@
         <div class="container">
 
             <!-- Main hero unit for a primary marketing message or call to action -->
-            <div class="splash hero-unit">
+	    <div id="splash" class="splash hero-unit">
 	        <p><h1>Computer Science Society</h1></p>
-                <p><h3>of Depaul University.</h3></p>
-                <p><a class="btn btn-primary btn-large" href="#about">Learn more &raquo;</a></p>
+                <p><h3>of Depaul University</h3></p>
+                <p>
+		  <a class="btn btn-primary btn-large" href="about.html">Learn more &raquo;</a>
+		  <a class="btn btn-large" onClick="dismiss()">Dismiss</a>
+		</p>
 	    </div>
-	    	      	    
-	    <div id="about" class="about hero-unit">
-		<p><h2>About</h2></p>
-		<p>...</p>
+	    <p><h2>NEWS</h2></p>
+            <div class="news hero-unit">
+	        <p>...</p>
 	    </div>
-	    
-            <!-- Example row of columns -->
-            <footer>
-	      <div class="row">
-		  <div class="span4">
-		      <h2>Projects</h2>
-		      <p><a href="https://github.com/cindablock/CSSsite">website</a></p>
-		      <p>...</p>
-		      <p><a class="btn" href="#">View details &raquo;</a></p>
-		  </div>
-		  <div class="span4">
-		      <h2>Members</h2>
-		      <p><a class="btn" href="#">View details &raquo;</a></p>
-		  </div>
-		  <div class="span4">
-		      <h2>other stuff</h2>
-		      <p><a class="btn" href="#">view details &raquo;</a></p>
-		  </div>
-	      </div>
-            </footer>
-
         </div> <!-- /container -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
